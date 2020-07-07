@@ -80,6 +80,7 @@ All the necessary files are located in `dev/tests/integration/`:
        'page-cache-redis-port' => 6379,
    ];
    ```
+   Please note that when using the `tmp-mysql` container, the test DB will have to be re-initialized whenever the environment is shut down and started up again. If you prefer, you can use `'db-host' => 'db'` and `'db-user' => 'magento'` instead. This will make the integration tests run a little bit slower, but the test DB will persist between environment restarts.
    
 3. You need to create `etc/config-global.php` based on `config-global.php.dist`. This is your container for Config data - for example: Configuration of Elasticsearch connection!
 
